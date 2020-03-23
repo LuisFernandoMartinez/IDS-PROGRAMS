@@ -28,7 +28,7 @@ public class JobListener extends JobExecutionListenerSupport {
 		if(jobExecution.getBatchStatus() == BatchStatus.COMPLETED ) {
 			LOG.info("FINALIZO TRABAJO REVISA RESUKLTADOS");
 			
-			jdbcTemplate.query("SELECT pNombre,sNombre,phone", (rs,row)->new Entity(rs.getString(1),
+			jdbcTemplate.query("SELECT primer_nombre,segundo_nombre,telefono FROM persona", (rs,row)->new Entity(rs.getString(1),
 					           rs.getString(2),rs.getString(3)))
 			            .forEach(entity -> LOG.info("Registro < " + entity + " >"));
 		}

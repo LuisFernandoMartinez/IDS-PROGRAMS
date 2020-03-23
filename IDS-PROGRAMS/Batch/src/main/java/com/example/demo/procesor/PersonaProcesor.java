@@ -18,7 +18,7 @@ public class PersonaProcesor implements ItemProcessor<Entity,Entity> {
 
 		String primerNombre=item.getpNombre().toUpperCase();
 		String segundoNombre=item.getsNombre().toUpperCase();
-		String tel=item.getPhone().toUpperCase();
+		String tel=item.getPhone();
 		
 		Entity entidad1=new Entity(primerNombre,segundoNombre,tel);
 		LOG.info("Convirtiendo ("+item+") a ("+ entidad1+")");
